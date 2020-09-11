@@ -147,3 +147,35 @@ button:hover{
     margin-top:30px;
     text-align: center;
 }
+
+/* MOBILE DESIGN  */
+
+@media only screen and (max-width: 600px) { 
+    nav { 
+        width:100%;
+        padding:2%;
+        
+    }
+
+    .title-container div { 
+        width: 100%;
+        ;
+    }
+
+    .title-container hr { 
+        width: 100%;
+    }
+
+    .artists-container { 
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    .artist { 
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+
+}
