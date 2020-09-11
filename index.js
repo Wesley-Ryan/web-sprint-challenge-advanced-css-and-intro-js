@@ -234,7 +234,7 @@ function getArtistByIndex(array, index) {
     }
   }
   
-  console.log(getArtistByIndex(artists,0))
+  console.log("The artist you requested is:",getArtistByIndex(artists,0))
   /**
 
 
@@ -244,14 +244,14 @@ function get20s(arr){
   let twenty = []
   for(let i = 0; i < arr.length; i++) { 
     if(arr[i].years.includes("1904") || arr[i].years.includes("1907")  ) { 
-      twenty.push(arr[i])
+      twenty.push(arr[i].name)
     }
     
   }
   return twenty
 }
 
-console.log(get20s(artists))
+console.log("The 20th Century artists are:",get20s(artists))
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -299,7 +299,7 @@ function addArtist(id,name,years,genre,nationality,bio,){
     bio: bio
   }
     artists.push(newObj)
-    console.log(artists)
+    console.log("The new artist was just added:", artists[artists.length - 1])
 
   }
 addArtist(20,"Wesley White", "Current", "Web Dev", "Lamdonion", "Md-5 bespin calamari winter moddell darth doldur lando. Winter saurin jacen aayla sanyassan bib bail boba vader. Lars momaw zannah teneniel kohl kyle iridonian. Cassio til jade borsk hapan carondian wedge boba winter. Amidala trandoshan kowakian tatooine bertroff lah dorvalla muun yané. Lando lorth jerec iv derlin shi'ido ogemite jabba unduli. Besalisk sikan klivian garindan droid leia klivian vau.")
