@@ -208,11 +208,14 @@ const artists = [
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
+console.log(artists[0])
+console.log(artists[2])
+
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-
+artists[8].name = "Vincent Van Gogh"
+console.log(artists[8])
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -223,20 +226,32 @@ const artists = [
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
 function getArtistByIndex(array, index) {
-    /* code here */
+    
+    for(let i = 0; i < array.length; i++) { 
+      if(array[i] === array[index]) { 
+        return `The artist at index ${array[index].id} is ${array[index].name}.`
+      } 
+    }
   }
   
+  console.log("The artist you requested is:",getArtistByIndex(artists,0))
   /**
 
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */){
-
-  /* Code here */
-
+function get20s(arr){
+  let twenty = []
+  for(let i = 0; i < arr.length; i++) { 
+    if(arr[i].years.includes("1904") || arr[i].years.includes("1907")  ) { 
+      twenty.push(arr[i].name)
+    }
+    
+  }
+  return twenty
 }
 
+console.log("The 20th Century artists are:",get20s(artists))
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -248,11 +263,17 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
-  }
+function removeArtist(arr,index) {
   
- 
+  for(let i = 0; i < arr.length; i++) { 
+    if(arr[i] === arr[index]) { 
+      arr.splice(index,1)
+    } 
+  }
+  return arr
+}
+console.log("This is before we remove:",artists)
+console.log("This is after we remove:",removeArtist(artists,0))
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -267,11 +288,22 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
+function addArtist(id,name,years,genre,nationality,bio,){
+  
+  let newObj = { 
+    id: id,
+    name: name, 
+    years: years, 
+    genre: genre, 
+    nationality: nationality, 
+    bio: bio
+  }
+    artists.push(newObj)
+    console.log("The new artist was just added:", artists[artists.length - 1])
 
   }
+addArtist(20,"Wesley White", "Current", "Web Dev", "Lamdonion", "Md-5 bespin calamari winter moddell darth doldur lando. Winter saurin jacen aayla sanyassan bib bail boba vader. Lars momaw zannah teneniel kohl kyle iridonian. Cassio til jade borsk hapan carondian wedge boba winter. Amidala trandoshan kowakian tatooine bertroff lah dorvalla muun yané. Lando lorth jerec iv derlin shi'ido ogemite jabba unduli. Besalisk sikan klivian garindan droid leia klivian vau.")
+
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -281,13 +313,21 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(arr){
+  let moreThan100 = []
 
-  /* Code here */
+  for(let i = 0; i < arr.length; i++) { 
+    if (arr[i].paintings >= 100) { 
+      moreThan100.push(arr[i].name)
+    }
+
+  }
+  
+  return moreThan100
 
 }
 
-
+console.log("These artist have more than 100 Paintings:",lotsOfArt(artists))
 
 // 🎨🎨 STRETCH 🎨🎨//
 
