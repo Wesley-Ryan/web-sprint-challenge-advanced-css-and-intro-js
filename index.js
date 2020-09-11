@@ -288,11 +288,22 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
+function addArtist(id,name,years,genre,nationality,bio,){
+  
+  let newObj = { 
+    id: id,
+    name: name, 
+    years: years, 
+    genre: genre, 
+    nationality: nationality, 
+    bio: bio
+  }
+    artists.push(newObj)
+    console.log(artists)
 
   }
+addArtist(20,"Wesley White", "Current", "Web Dev", "Lamdonion", "Md-5 bespin calamari winter moddell darth doldur lando. Winter saurin jacen aayla sanyassan bib bail boba vader. Lars momaw zannah teneniel kohl kyle iridonian. Cassio til jade borsk hapan carondian wedge boba winter. Amidala trandoshan kowakian tatooine bertroff lah dorvalla muun yané. Lando lorth jerec iv derlin shi'ido ogemite jabba unduli. Besalisk sikan klivian garindan droid leia klivian vau.")
+
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -302,13 +313,21 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(arr){
+  let moreThan100 = []
 
-  /* Code here */
+  for(let i = 0; i < arr.length; i++) { 
+    if (arr[i].paintings >= 100) { 
+      moreThan100.push(arr[i].name)
+    }
+
+  }
+  
+  return moreThan100
 
 }
 
-
+console.log("These artist have more than 100 Paintings:",lotsOfArt(artists))
 
 // 🎨🎨 STRETCH 🎨🎨//
 
