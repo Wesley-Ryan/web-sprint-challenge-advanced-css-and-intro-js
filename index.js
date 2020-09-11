@@ -264,16 +264,14 @@ console.log("The 20th Century artists are:",get20s(artists))
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
 function removeArtist(arr,index) {
-  
-  for(let i = 0; i < arr.length; i++) { 
-    if(arr[i] === arr[index]) { 
+    if(arr[index]) { 
       arr.splice(index,1)
-    } 
-  }
-  return arr
+    }
+    return arr.length
 }
-console.log("This is before we remove:",artists)
-console.log("This is after we remove:",removeArtist(artists,0))
+console.log("This is before we remove:", artists.length)
+removeArtist(artists,0)
+console.log("This is after we remove:", artists.length)
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
